@@ -16,6 +16,11 @@ const displayFont = Playfair_Display({
 export const metadata: Metadata = {
   title: "Camp Dashboard",
   description: "Team scores and camp management dashboard",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

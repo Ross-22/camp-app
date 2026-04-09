@@ -4,6 +4,9 @@
   },
   "build": {
     "production": {
+      "env": {
+        "EXPO_PUBLIC_CONVEX_URL": "https://frugal-salmon-96.convex.cloud"
+      },
       "android": {
         "buildType": "apk"
       }

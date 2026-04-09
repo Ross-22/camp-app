@@ -1,19 +1,37 @@
 import { ConvexProvider, ConvexReactClient } from "convex/react";
 import React from "react";
+import { Text, View } from "react-native";
 
-// You'll need to replace this with your actual Convex deployment URL
-// Run `npx convex dev` to get your deployment URL
-const CONVEX_URL = process.env.EXPO_PUBLIC_CONVEX_URL || "";
+const CONVEX_URL = process.env.EXPO_PUBLIC_CONVEX_URL;
 
-if (!CONVEX_URL) {
-  console.warn(
-    "Missing EXPO_PUBLIC_CONVEX_URL environment variable. " +
-    "Run `npx convex dev` and add your deployment URL to .env"
-  );
-}
+const convex = CONVEX_URL ? new ConvexReactClient(CONVEX_URL) : null;
 
-const convex = new ConvexReactClient(CONVEX_URL);
+export function ConvexClientProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  if (!convex) {
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          paddingHorizontal: 24,
+          backgroundColor: "#ffffff",
+        }}
+      >
+        <Text style={{ fontSize: 18, fontWeight: "600", marginBottom: 8 }}>
+          App configuration missing
+        </Text>
+        <Text style={{ textAlign: "center", color: "#4b5563" }}>
+          Set EXPO_PUBLIC_CONVEX_URL in your EAS profile or local env file, then
+          rebuild the app.
+        </Text>
+      </View>
+    );
+  }
 
-export function ConvexClientProvider({ children }: { children: React.ReactNode }) {
   return <ConvexProvider client={convex}>{children}</ConvexProvider>;
 }
