@@ -8,7 +8,7 @@
   "types": "index.ts",
   "scripts": {
     "dev": "convex dev",
-    "build": "convex dev --once",
+    "build": "pnpm run type-check",
     "deploy": "convex deploy",
     "type-check": "tsc --noEmit"
   },
