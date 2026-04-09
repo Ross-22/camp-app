@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "ab8d9202-e51a-4d22-9c0a-5a75fc2fc8e6"
+      }
+    },
+    "android": {
+      "package": "com.alsorcamp.campapp"
+    }
+  }
+}
