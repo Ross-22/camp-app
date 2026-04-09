@@ -7,7 +7,7 @@
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
       "supportsTablet": true
     },
@@ -20,7 +20,8 @@
         "monochromeImage": "./assets/images/splash.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": true
+      "predictiveBackGestureEnabled": true,
+      "package": "com.alsorcamp.campapp"
     },
     "web": {
       "output": "static",
@@ -45,7 +46,14 @@
     ],
     "experiments": {
       "typedRoutes": true,
-      "reactCompiler": true
-    }
+      "reactCompiler": false
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "71b69249-843b-42ce-84cb-a660242519e8"
+      }
+    },
+    "owner": "kadmielbaino"
   }
 }
