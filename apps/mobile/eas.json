@@ -5,7 +5,8 @@
   "build": {
     "production": {
       "env": {
-        "EXPO_PUBLIC_CONVEX_URL": "https://frugal-salmon-96.convex.cloud"
+        "EXPO_PUBLIC_CONVEX_URL": "https://frugal-salmon-96.convex.cloud",
+        "EAS_BUILD_PNPM_VERSION": "10.33.0"
       },
       "android": {
         "buildType": "apk"
